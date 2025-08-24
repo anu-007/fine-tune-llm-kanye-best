@@ -1,9 +1,5 @@
-fine_tuned_llama_adapter
-fine_tuned_mistral_adapter
 logs
 .ipynb_checkpoints
-results
-kanye_bars_prompt_completion.jsonl
-my_kanye_data
 model_offload_cache
-untitled.txt
+langextract_env
+__pycache__

@@ -1,0 +1,205 @@
+<style>
+.lx-highlight { position: relative; border-radius:3px; padding:1px 2px;}
+.lx-highlight .lx-tooltip {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  background: #333;
+  color: #fff;
+  text-align: left;
+  border-radius: 4px;
+  padding: 6px 8px;
+  position: absolute;
+  z-index: 1000;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  max-width: 240px;
+  white-space: normal;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+.lx-highlight:hover .lx-tooltip { visibility: visible; opacity:1; }
+.lx-animated-wrapper { max-width: 100%; font-family: Arial, sans-serif; }
+.lx-controls {
+  background: #fafafa; border: 1px solid #90caf9; border-radius: 8px;
+  padding: 12px; margin-bottom: 16px;
+}
+.lx-button-row {
+  display: flex; justify-content: center; gap: 8px; margin-bottom: 12px;
+}
+.lx-control-btn {
+  background: #4285f4; color: white; border: none; border-radius: 4px;
+  padding: 8px 16px; cursor: pointer; font-size: 13px; font-weight: 500;
+  transition: background-color 0.2s;
+}
+.lx-control-btn:hover { background: #3367d6; }
+.lx-progress-container {
+  margin-bottom: 8px;
+}
+.lx-progress-slider {
+  width: 100%; margin: 0; appearance: none; height: 6px;
+  background: #ddd; border-radius: 3px; outline: none;
+}
+.lx-progress-slider::-webkit-slider-thumb {
+  appearance: none; width: 18px; height: 18px; background: #4285f4;
+  border-radius: 50%; cursor: pointer;
+}
+.lx-progress-slider::-moz-range-thumb {
+  width: 18px; height: 18px; background: #4285f4; border-radius: 50%;
+  cursor: pointer; border: none;
+}
+.lx-status-text {
+  text-align: center; font-size: 12px; color: #666; margin-top: 4px;
+}
+.lx-text-window {
+  font-family: monospace; white-space: pre-wrap; border: 1px solid #90caf9;
+  padding: 12px; max-height: 260px; overflow-y: auto; margin-bottom: 12px;
+  line-height: 1.6;
+}
+.lx-attributes-panel {
+  background: #fafafa; border: 1px solid #90caf9; border-radius: 6px;
+  padding: 8px 10px; margin-top: 8px; font-size: 13px;
+}
+.lx-current-highlight {
+  border-bottom: 4px solid #ff4444;
+  font-weight: bold;
+  animation: lx-pulse 1s ease-in-out;
+}
+@keyframes lx-pulse {
+  0% { text-decoration-color: #ff4444; }
+  50% { text-decoration-color: #ff0000; }
+  100% { text-decoration-color: #ff4444; }
+}
+.lx-legend {
+  font-size: 12px; margin-bottom: 8px;
+  padding-bottom: 8px; border-bottom: 1px solid #e0e0e0;
+}
+.lx-label {
+  display: inline-block;
+  padding: 2px 4px;
+  border-radius: 3px;
+  margin-right: 4px;
+  color: #000;
+}
+.lx-attr-key {
+  font-weight: 600;
+  color: #1565c0;
+  letter-spacing: 0.3px;
+}
+.lx-attr-value {
+  font-weight: 400;
+  opacity: 0.85;
+  letter-spacing: 0.2px;
+}
+
+/* Add optimizations with larger fonts and better readability for GIFs */
+.lx-gif-optimized .lx-text-window { font-size: 16px; line-height: 1.8; }
+.lx-gif-optimized .lx-attributes-panel { font-size: 15px; }
+.lx-gif-optimized .lx-current-highlight { text-decoration-thickness: 4px; }
+</style>
+    <div class="lx-animated-wrapper lx-gif-optimized">
+      <div class="lx-attributes-panel">
+        <div class="lx-legend">Highlights Legend: <span class="lx-label" style="background-color:#D2E3FC;">bar</span> <span class="lx-label" style="background-color:#C8E6C9;">completion</span></div>
+        <div id="attributesContainer"></div>
+      </div>
+      <div class="lx-text-window" id="textWindow">
+        <span class="lx-highlight lx-current-highlight" data-idx="0" style="background-color:#D2E3FC;">Let the suicide doors up</span>
+<span class="lx-highlight" data-idx="1" style="background-color:#C8E6C9;">I threw suicides on the tour bus</span>
+<span class="lx-highlight" data-idx="2" style="background-color:#D2E3FC;">I threw suicides on the private jet</span>
+<span class="lx-highlight" data-idx="3" style="background-color:#C8E6C9;">You know what that mean, I&#x27;m fly to death</span>
+<span class="lx-highlight" data-idx="4" style="background-color:#D2E3FC;">I step in Def Jam buildin&#x27; like I&#x27;m the shit</span>
+<span class="lx-highlight" data-idx="5" style="background-color:#C8E6C9;">Tell &#x27;em give me fifty million or I&#x27;ma quit</span>
+<span class="lx-highlight" data-idx="6" style="background-color:#D2E3FC;">Most rappers&#x27; taste level ain&#x27;t at my waist level</span>
+<span class="lx-highlight" data-idx="7" style="background-color:#C8E6C9;">Turn up the bass &#x27;til it&#x27;s up-in-yo-face level</span>
+
+<span class="lx-highlight" data-idx="8" style="background-color:#D2E3FC;">Don&#x27;t do no press but I get the most press kit</span>
+<span class="lx-highlight" data-idx="9" style="background-color:#C8E6C9;">Plus, yo, my bitch make your bitch look like Precious</span>
+<span class="lx-highlight" data-idx="10" style="background-color:#D2E3FC;">Somethin&#x27; &#x27;bout Mary, she gone off that molly</span>
+<span class="lx-highlight" data-idx="11" style="background-color:#C8E6C9;">Now the whole party is melted like Dalí</span>
+<span class="lx-highlight" data-idx="12" style="background-color:#D2E3FC;">Now everybody is movin&#x27; they body</span>
+<span class="lx-highlight" data-idx="13" style="background-color:#C8E6C9;">Don&#x27;t sell me apartment, I&#x27;ll move in the lobby</span>
+<span class="lx-highlight" data-idx="14" style="background-color:#D2E3FC;">Niggas is loiterin&#x27; just to feel important</span>
+<span class="lx-highlight" data-idx="15" style="background-color:#C8E6C9;">You gon&#x27; see lawyers and niggas in Jordans</span>
+      </div>
+      <div class="lx-controls">
+        <div class="lx-button-row">
+          <button class="lx-control-btn" onclick="playPause()">▶️ Play</button>
+          <button class="lx-control-btn" onclick="prevExtraction()">⏮ Previous</button>
+          <button class="lx-control-btn" onclick="nextExtraction()">⏭ Next</button>
+        </div>
+        <div class="lx-progress-container">
+          <input type="range" id="progressSlider" class="lx-progress-slider"
+                 min="0" max="15" value="0"
+                 onchange="jumpToExtraction(this.value)">
+        </div>
+        <div class="lx-status-text">
+          Entity <span id="entityInfo">1/16</span> |
+          Pos <span id="posInfo">[0-24]</span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function() {
+        const extractions = [{"index": 0, "class": "bar", "text": "Let the suicide doors up", "color": "#D2E3FC", "startPos": 0, "endPos": 24, "beforeText": "", "extractionText": "Let the suicide doors up", "afterText": "\nI threw suicides on the tour bus\nI threw suicides on the private jet\nYou know what that mean, I&#x27;m fly to death\nI step in Def Jam buildin&#x27; like I&#x27;m th", "attributesHtml": "<div><strong>class:</strong> bar</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">feeling</span>: <span class=\"lx-attr-value\">accomplished</span>}</div>"}, {"index": 1, "class": "completion", "text": "I threw suicides on the tour bus", "color": "#C8E6C9", "startPos": 25, "endPos": 57, "beforeText": "Let the suicide doors up\n", "extractionText": "I threw suicides on the tour bus", "afterText": "\nI threw suicides on the private jet\nYou know what that mean, I&#x27;m fly to death\nI step in Def Jam buildin&#x27; like I&#x27;m the shit\nTell &#x27;em give me fifty mil", "attributesHtml": "<div><strong>class:</strong> completion</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">emotional_state</span>: <span class=\"lx-attr-value\">flex</span>}</div>"}, {"index": 2, "class": "bar", "text": "I threw suicides on the private jet", "color": "#D2E3FC", "startPos": 58, "endPos": 93, "beforeText": "Let the suicide doors up\nI threw suicides on the tour bus\n", "extractionText": "I threw suicides on the private jet", "afterText": "\nYou know what that mean, I&#x27;m fly to death\nI step in Def Jam buildin&#x27; like I&#x27;m the shit\nTell &#x27;em give me fifty million or I&#x27;ma quit\nMost rappers&#x27; tast", "attributesHtml": "<div><strong>class:</strong> bar</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">feeling</span>: <span class=\"lx-attr-value\">confident</span>}</div>"}, {"index": 3, "class": "completion", "text": "You know what that mean, I'm fly to death", "color": "#C8E6C9", "startPos": 94, "endPos": 135, "beforeText": "Let the suicide doors up\nI threw suicides on the tour bus\nI threw suicides on the private jet\n", "extractionText": "You know what that mean, I&#x27;m fly to death", "afterText": "\nI step in Def Jam buildin&#x27; like I&#x27;m the shit\nTell &#x27;em give me fifty million or I&#x27;ma quit\nMost rappers&#x27; taste level ain&#x27;t at my waist level\nTurn up th", "attributesHtml": "<div><strong>class:</strong> completion</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">emotional_state</span>: <span class=\"lx-attr-value\">boastful</span>}</div>"}, {"index": 4, "class": "bar", "text": "I step in Def Jam buildin' like I'm the shit", "color": "#D2E3FC", "startPos": 136, "endPos": 180, "beforeText": "Let the suicide doors up\nI threw suicides on the tour bus\nI threw suicides on the private jet\nYou know what that mean, I&#x27;m fly to death\n", "extractionText": "I step in Def Jam buildin&#x27; like I&#x27;m the shit", "afterText": "\nTell &#x27;em give me fifty million or I&#x27;ma quit\nMost rappers&#x27; taste level ain&#x27;t at my waist level\nTurn up the bass &#x27;til it&#x27;s up-in-yo-face level\n\nDon&#x27;t d", "attributesHtml": "<div><strong>class:</strong> bar</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">feeling</span>: <span class=\"lx-attr-value\">confident</span>}</div>"}, {"index": 5, "class": "completion", "text": "Tell 'em give me fifty million or I'ma quit", "color": "#C8E6C9", "startPos": 181, "endPos": 224, "beforeText": "w suicides on the tour bus\nI threw suicides on the private jet\nYou know what that mean, I&#x27;m fly to death\nI step in Def Jam buildin&#x27; like I&#x27;m the shit\n", "extractionText": "Tell &#x27;em give me fifty million or I&#x27;ma quit", "afterText": "\nMost rappers&#x27; taste level ain&#x27;t at my waist level\nTurn up the bass &#x27;til it&#x27;s up-in-yo-face level\n\nDon&#x27;t do no press but I get the most press kit\nPlus", "attributesHtml": "<div><strong>class:</strong> completion</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">emotional_state</span>: <span class=\"lx-attr-value\">demanding</span>}</div>"}, {"index": 6, "class": "bar", "text": "Most rappers' taste level ain't at my waist level", "color": "#D2E3FC", "startPos": 225, "endPos": 274, "beforeText": "on the private jet\nYou know what that mean, I&#x27;m fly to death\nI step in Def Jam buildin&#x27; like I&#x27;m the shit\nTell &#x27;em give me fifty million or I&#x27;ma quit\n", "extractionText": "Most rappers&#x27; taste level ain&#x27;t at my waist level", "afterText": "\nTurn up the bass &#x27;til it&#x27;s up-in-yo-face level\n\nDon&#x27;t do no press but I get the most press kit\nPlus, yo, my bitch make your bitch look like Precious\n", "attributesHtml": "<div><strong>class:</strong> bar</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">feeling</span>: <span class=\"lx-attr-value\">superior</span>}</div>"}, {"index": 7, "class": "completion", "text": "Turn up the bass 'til it's up-in-yo-face level", "color": "#C8E6C9", "startPos": 275, "endPos": 321, "beforeText": "y to death\nI step in Def Jam buildin&#x27; like I&#x27;m the shit\nTell &#x27;em give me fifty million or I&#x27;ma quit\nMost rappers&#x27; taste level ain&#x27;t at my waist level\n", "extractionText": "Turn up the bass &#x27;til it&#x27;s up-in-yo-face level", "afterText": "\n\nDon&#x27;t do no press but I get the most press kit\nPlus, yo, my bitch make your bitch look like Precious\nSomethin&#x27; &#x27;bout Mary, she gone off that molly\nN", "attributesHtml": "<div><strong>class:</strong> completion</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">emotional_state</span>: <span class=\"lx-attr-value\">aggressive</span>}</div>"}, {"index": 8, "class": "bar", "text": "Don't do no press but I get the most press kit", "color": "#D2E3FC", "startPos": 323, "endPos": 369, "beforeText": "he shit\nTell &#x27;em give me fifty million or I&#x27;ma quit\nMost rappers&#x27; taste level ain&#x27;t at my waist level\nTurn up the bass &#x27;til it&#x27;s up-in-yo-face level\n\n", "extractionText": "Don&#x27;t do no press but I get the most press kit", "afterText": "\nPlus, yo, my bitch make your bitch look like Precious\nSomethin&#x27; &#x27;bout Mary, she gone off that molly\nNow the whole party is melted like Dal\u00ed\nNow every", "attributesHtml": "<div><strong>class:</strong> bar</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">feeling</span>: <span class=\"lx-attr-value\">confident</span>}</div>"}, {"index": 9, "class": "completion", "text": "Plus, yo, my bitch make your bitch look like Precious", "color": "#C8E6C9", "startPos": 370, "endPos": 423, "beforeText": "quit\nMost rappers&#x27; taste level ain&#x27;t at my waist level\nTurn up the bass &#x27;til it&#x27;s up-in-yo-face level\n\nDon&#x27;t do no press but I get the most press kit\n", "extractionText": "Plus, yo, my bitch make your bitch look like Precious", "afterText": "\nSomethin&#x27; &#x27;bout Mary, she gone off that molly\nNow the whole party is melted like Dal\u00ed\nNow everybody is movin&#x27; they body\nDon&#x27;t sell me apartment, I&#x27;ll", "attributesHtml": "<div><strong>class:</strong> completion</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">emotional_state</span>: <span class=\"lx-attr-value\">boastful</span>}</div>"}, {"index": 10, "class": "bar", "text": "Somethin' 'bout Mary, she gone off that molly", "color": "#D2E3FC", "startPos": 424, "endPos": 469, "beforeText": "\nTurn up the bass &#x27;til it&#x27;s up-in-yo-face level\n\nDon&#x27;t do no press but I get the most press kit\nPlus, yo, my bitch make your bitch look like Precious\n", "extractionText": "Somethin&#x27; &#x27;bout Mary, she gone off that molly", "afterText": "\nNow the whole party is melted like Dal\u00ed\nNow everybody is movin&#x27; they body\nDon&#x27;t sell me apartment, I&#x27;ll move in the lobby\nNiggas is loiterin&#x27; just to", "attributesHtml": "<div><strong>class:</strong> bar</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">feeling</span>: <span class=\"lx-attr-value\">disruptive</span>}</div>"}, {"index": 11, "class": "completion", "text": "Now the whole party is melted like Dal\u00ed", "color": "#C8E6C9", "startPos": 470, "endPos": 509, "beforeText": "l\n\nDon&#x27;t do no press but I get the most press kit\nPlus, yo, my bitch make your bitch look like Precious\nSomethin&#x27; &#x27;bout Mary, she gone off that molly\n", "extractionText": "Now the whole party is melted like Dal\u00ed", "afterText": "\nNow everybody is movin&#x27; they body\nDon&#x27;t sell me apartment, I&#x27;ll move in the lobby\nNiggas is loiterin&#x27; just to feel important\nYou gon&#x27; see lawyers and", "attributesHtml": "<div><strong>class:</strong> completion</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">emotional_state</span>: <span class=\"lx-attr-value\">chaotic</span>}</div>"}, {"index": 12, "class": "bar", "text": "Now everybody is movin' they body", "color": "#D2E3FC", "startPos": 510, "endPos": 543, "beforeText": "press kit\nPlus, yo, my bitch make your bitch look like Precious\nSomethin&#x27; &#x27;bout Mary, she gone off that molly\nNow the whole party is melted like Dal\u00ed\n", "extractionText": "Now everybody is movin&#x27; they body", "afterText": "\nDon&#x27;t sell me apartment, I&#x27;ll move in the lobby\nNiggas is loiterin&#x27; just to feel important\nYou gon&#x27; see lawyers and niggas in Jordans", "attributesHtml": "<div><strong>class:</strong> bar</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">feeling</span>: <span class=\"lx-attr-value\">disruptive</span>}</div>"}, {"index": 13, "class": "completion", "text": "Don't sell me apartment, I'll move in the lobby", "color": "#C8E6C9", "startPos": 544, "endPos": 591, "beforeText": "your bitch look like Precious\nSomethin&#x27; &#x27;bout Mary, she gone off that molly\nNow the whole party is melted like Dal\u00ed\nNow everybody is movin&#x27; they body\n", "extractionText": "Don&#x27;t sell me apartment, I&#x27;ll move in the lobby", "afterText": "\nNiggas is loiterin&#x27; just to feel important\nYou gon&#x27; see lawyers and niggas in Jordans", "attributesHtml": "<div><strong>class:</strong> completion</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">emotional_state</span>: <span class=\"lx-attr-value\">demanding</span>}</div>"}, {"index": 14, "class": "bar", "text": "Niggas is loiterin' just to feel important", "color": "#D2E3FC", "startPos": 592, "endPos": 634, "beforeText": "ry, she gone off that molly\nNow the whole party is melted like Dal\u00ed\nNow everybody is movin&#x27; they body\nDon&#x27;t sell me apartment, I&#x27;ll move in the lobby\n", "extractionText": "Niggas is loiterin&#x27; just to feel important", "afterText": "\nYou gon&#x27; see lawyers and niggas in Jordans", "attributesHtml": "<div><strong>class:</strong> bar</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">feeling</span>: <span class=\"lx-attr-value\">superior</span>}</div>"}, {"index": 15, "class": "completion", "text": "You gon' see lawyers and niggas in Jordans", "color": "#C8E6C9", "startPos": 635, "endPos": 677, "beforeText": "arty is melted like Dal\u00ed\nNow everybody is movin&#x27; they body\nDon&#x27;t sell me apartment, I&#x27;ll move in the lobby\nNiggas is loiterin&#x27; just to feel important\n", "extractionText": "You gon&#x27; see lawyers and niggas in Jordans", "afterText": "", "attributesHtml": "<div><strong>class:</strong> completion</div><div><strong>attributes:</strong> {<span class=\"lx-attr-key\">emotional_state</span>: <span class=\"lx-attr-value\">confident</span>}</div>"}];
+        let currentIndex = 0;
+        let isPlaying = false;
+        let animationInterval = null;
+        let animationSpeed = 1.0;
+
+        function updateDisplay() {
+          const extraction = extractions[currentIndex];
+          if (!extraction) return;
+
+          document.getElementById('attributesContainer').innerHTML = extraction.attributesHtml;
+          document.getElementById('entityInfo').textContent = (currentIndex + 1) + '/' + extractions.length;
+          document.getElementById('posInfo').textContent = '[' + extraction.startPos + '-' + extraction.endPos + ']';
+          document.getElementById('progressSlider').value = currentIndex;
+
+          const playBtn = document.querySelector('.lx-control-btn');
+          if (playBtn) playBtn.textContent = isPlaying ? '⏸ Pause' : '▶️ Play';
+
+          const prevHighlight = document.querySelector('.lx-text-window .lx-current-highlight');
+          if (prevHighlight) prevHighlight.classList.remove('lx-current-highlight');
+          const currentSpan = document.querySelector('.lx-text-window span[data-idx="' + currentIndex + '"]');
+          if (currentSpan) {
+            currentSpan.classList.add('lx-current-highlight');
+            currentSpan.scrollIntoView({block: 'center', behavior: 'smooth'});
+          }
+        }
+
+        function nextExtraction() {
+          currentIndex = (currentIndex + 1) % extractions.length;
+          updateDisplay();
+        }
+
+        function prevExtraction() {
+          currentIndex = (currentIndex - 1 + extractions.length) % extractions.length;
+          updateDisplay();
+        }
+
+        function jumpToExtraction(index) {
+          currentIndex = parseInt(index);
+          updateDisplay();
+        }
+
+        function playPause() {
+          if (isPlaying) {
+            clearInterval(animationInterval);
+            isPlaying = false;
+          } else {
+            animationInterval = setInterval(nextExtraction, animationSpeed * 1000);
+            isPlaying = true;
+          }
+          updateDisplay();
+        }
+
+        window.playPause = playPause;
+        window.nextExtraction = nextExtraction;
+        window.prevExtraction = prevExtraction;
+        window.jumpToExtraction = jumpToExtraction;
+
+        updateDisplay();
+      })();
+    </script>
